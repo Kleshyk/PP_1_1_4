@@ -1,9 +1,14 @@
 package jm.task.core.jdbc.util;
 
 
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
 
 public class Util {
 
@@ -19,8 +24,20 @@ public class Util {
         }
         return conn;
     }
-    public
 
+    public static SessionFactory getSessionFactory() {
+        SessionFactory sf = null;
+
+        try {
+            Configuration config = new Configuration();
+
+
+
+        } catch (RuntimeException e) {
+            return null;
+        }
+        return sf;
+    }
 
 
 
